@@ -6,8 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class Main {
 	
+   @RequestMapping("/") 
+   public String root() {
+	   return "main";
+   }
+   
    @RequestMapping("/welcome")
    public String main() {
-	   return "index";
+	   return "main";
    }
 }

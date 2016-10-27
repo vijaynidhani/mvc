@@ -5,23 +5,24 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
 		<script>
-		   var app = angular.module('myApp', ['ngRoute']);
+		
+var app = angular.module('myApp', ['ngRoute']);
 
 app.config(function($routeProvider) {
   $routeProvider
 
   .when('/', {
-    templateUrl : 'pages/home.html',
+    templateUrl : 'mainpage.html',
     controller  : 'HomeController'
   })
 
   .when('/blog', {
-    templateUrl : 'pages/blog.html',
+    templateUrl : 'contactus.html',
     controller  : 'BlogController'
   })
 
   .when('/about', {
-    templateUrl : 'pages/about.html',
+    templateUrl : 'about.html',
     controller  : 'AboutController'
   })
 
