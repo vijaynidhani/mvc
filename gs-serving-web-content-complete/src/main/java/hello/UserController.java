@@ -30,6 +30,7 @@ public class UserController {
 	    }		
 	    return list;
 	}	
+	
 	@RequestMapping("/deleteUser") 
 	public String deleteUser(@RequestParam(name="id") Long id) {
 		User user=userRepository.findOne(id);
