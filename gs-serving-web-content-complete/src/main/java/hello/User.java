@@ -1,4 +1,4 @@
-package entities;
+package hello;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +22,7 @@ public class User {
 
 	public String emailID;
 	
-	protected User() 
+	public User() 
 	{
 		
 	}
@@ -46,6 +46,12 @@ public class User {
 
 	public void setEmailID(String emailID) {
 		this.emailID = emailID;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return getName()+":"+getEmailID();
 	}
 	
 }
