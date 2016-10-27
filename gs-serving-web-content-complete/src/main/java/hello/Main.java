@@ -8,6 +8,6 @@ public class Main {
 	
    @RequestMapping("/welcome")
    public String main() {
-	   return "main";
+	   return "index";
    }
 }

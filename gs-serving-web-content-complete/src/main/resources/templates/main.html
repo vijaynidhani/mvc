@@ -10,51 +10,51 @@
       <!-- load angular and angular route via CDN -->
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
           <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-      
-     <script>
-        
-       var scotchApp = angular.module('scotchApp', []);
+    
+    <script>
+    
+    var scotchApp = angular.module('scotchApp', []);
 
-       // create the controller and inject Angular's $scope
-        scotchApp.config(function($routeProvider) { 
-        	
-        $routeProvider
-
-            // route for the home page
-            .when('/', {
-                templateUrl : 'mainpage.html',
-                controller  : 'mainController'
-            })
-
-            // route for the about page
-            .when('/about', {
-                templateUrl : 'about.html',
-                controller  : 'aboutController'
-            })
-
-            // route for the contact page
-            .when('/contact', {
-                templateUrl : 'contactus.html',
-                controller  : 'contactController'
-            });
-    });
-       
     // create the controller and inject Angular's $scope
-    scotchApp.controller('mainController', function($scope) {
-        // create a message to display in our view
-        $scope.message = 'Everyone come and see how good I look!';
-    });
+     scotchApp.config(function($routeProvider) { 
+     	
+     $routeProvider
 
-    scotchApp.controller('aboutController', function($scope) {
-        $scope.message = 'Look! I am an about page.';
-    });
+         // route for the home page
+         .when('/', {
+             templateUrl : 'mainpage.html',
+             controller  : 'mainController'
+         })
 
-    scotchApp.controller('contactController', function($scope) {
-        $scope.message = 'Contact us! JK. This is just a demo.';
-    });
-        
+         // route for the about page
+         .when('/about', {
+             templateUrl : 'about.html',
+             controller  : 'aboutController'
+         })
+
+         // route for the contact page
+         .when('/contact', {
+             templateUrl : 'contactus.html',
+             controller  : 'contactController'
+         });
+ });
+    
+ // create the controller and inject Angular's $scope
+ scotchApp.controller('mainController', function($scope) {
+     // create a message to display in our view
+     $scope.message = 'Everyone come and see how good I look!';
+ });
+
+ scotchApp.controller('aboutController', function($scope) {
+     $scope.message = 'Look! I am an about page.';
+ });
+
+ scotchApp.controller('contactController', function($scope) {
+     $scope.message = 'Contact us! JK. This is just a demo.';
+ });
+ 
+    
     </script>
-      
       
     </head>
     <body ng-controller="mainController">
@@ -68,22 +68,21 @@
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
-                    <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+                    <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#/about"><i class="fa fa-shield"></i> About</a></li>
+                    <li><a href="#/contact"><i class="fa fa-comment"></i> Contact</a></li>
                 </ul>
             </div>
             </nav>
         </header>
 
         <!-- MAIN CONTENT AND INJECTED VIEWS -->
-        <div id="main">
-            
+        <div id="main"> 
             <!-- angular templating -->
             <!-- this is where content will be injected -->
-                <div ng-view></div> 
-        </div>
-        
+            <div ng-view=""></div>
+           
+        </div> 
        
     </body>
     </html>
