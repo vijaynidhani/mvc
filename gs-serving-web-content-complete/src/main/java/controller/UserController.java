@@ -1,4 +1,4 @@
-package hello;
+package controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +14,9 @@ public class UserController {
 	@Autowired 
 	UserRepository userRepository;  
 	
+	@Autowired
+	UserService userService;
+	
 	@RequestMapping("/addUser") 
     public String addUser(@RequestParam(name="name") String name, @RequestParam(name="email") String email) {
     	User user=new User(name,email);
@@ -28,6 +31,7 @@ public class UserController {
 	    for(User user:users ) {
 	        list.add(user);	
 	    }		
+	    System.out.println(userService.multiply(1, 2));
 	    return list;
 	}	
 	
